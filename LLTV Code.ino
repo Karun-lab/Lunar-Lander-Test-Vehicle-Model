@@ -59,20 +59,21 @@ void setup() {
 void loop() {
  Tip.getMotion6(&ax, &ay, &az, &gx, &gy, &gz);
  
- smoothx= (ax *0.04) +(prex * 0.96);
- smoothy= (ay *0.04) +(prey * 0.96);
- smoothz= (az *0.04) +(prez * 0.96);
+ smoothx= (ax *0.07) +(prex * 0.93);
+ smoothy= (ay *0.07) +(prey * 0.93);
+ smoothz= (az *0.07) +(prez * 0.93);
  
  prex=smoothx;
  prey=smoothy;
  prez=smoothz;
  
+Serial.print(smoothx); Serial.print("\t");Serial.println(smoothy);
   smoothx = map (smoothx , -17000, 17000, 180, 0);
   smoothy = map (smoothy , -17000, 17000, 180, 0); 
   smoothz = map (smoothz , -17000, 17000, 180, 0);      
      
 
-  //Serial.print(smoothx); Serial.print("\t");
+  
   s1.write(smoothx);
   s2.write(smoothy);
   Data.Data1 = smoothx;
@@ -80,6 +81,5 @@ void loop() {
   Data.Data3 = smoothz;
 
   radio.write(&Data, sizeof(Data_Pakage));
-  
 
 }
