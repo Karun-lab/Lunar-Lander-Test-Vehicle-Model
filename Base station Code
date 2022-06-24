@@ -23,7 +23,7 @@ void setup() {
   radio.setPALevel(RF24_PA_MIN);
   radio.startListening();
   resetData();
-  Serial.println("Receiver initializing...");
+  
 }
 
 void loop() {
@@ -36,11 +36,13 @@ void loop() {
    if ( currentTime - lastReceiveTime > 1000 ) { 
     resetData(); 
   }
-
-    Serial.print(Data.Data1);
-    Serial.print("  ");
-    Serial.print(Data.Data2);
-    Serial.print("  ");
+    //Serial.print("Roll: ");
+    Serial.print(Data.Data1-93);
+    Serial.print("/");
+    //Serial.print("Pitch: ");
+    Serial.print(Data.Data2-89);
+    Serial.print("/");
+    //Serial.print("Yaw: ");
     Serial.println(Data.Data3);
 
   }
