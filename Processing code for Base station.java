@@ -34,16 +34,31 @@ void draw() {
   
   //cylinders
   translate(170,57,80);
-  drawCylinder(20,20,150,24);
+  drawCylinder(15,15,120,17);
   //2cyl
   translate(-340,0,0);
-  drawCylinder(20,20,150,24);
+  drawCylinder(15,15,120,17);
   //3cyl
   translate(0,0,-160);
-  drawCylinder(20,20,150,24);
+  drawCylinder(15,15,120,17);
   //4cyl
   translate(340,0,0);
-  drawCylinder(20,20,150,24);
+  drawCylinder(15,15,120,17);
+  //cyllontop
+  translate(-170,-180,80);
+  drawCylinder(8,8,100,13);
+  //cubeontop
+  translate(0,0,0);
+  box(150, 20, 75);
+  //thrusster
+  translate(0,170,0);
+  drawCylinder(10,60,70,20);
+  //antennasupp
+  translate(70,-170,0);
+  box(30,15,10);
+  //antenna
+  translate(10,0,0);
+  drawCylinder(5,5,-90,4);
 
   }
   
